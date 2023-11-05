@@ -8,6 +8,9 @@ SVG_IMAGES = []
 MP3_AUDIO = []
 MY_OTHER = []
 ARCHIVES = []
+DOCUMENTS = []
+VIDEO = []
+MUSIC = []
 
 REGISTER_EXTENSION = {
     'JPEG': JPEG_IMAGES,
@@ -16,6 +19,20 @@ REGISTER_EXTENSION = {
     'SVG': SVG_IMAGES,
     'MP3': MP3_AUDIO,
     'ZIP': ARCHIVES,
+    'DOC': DOCUMENTS,   
+    'DOCX': DOCUMENTS,
+    'TXT': DOCUMENTS,
+    'PDF': DOCUMENTS,
+    'XLSX': DOCUMENTS,
+    'PPTX': DOCUMENTS,
+    'AVI': VIDEO,       
+    'MP4': VIDEO,
+    'MOV': VIDEO,
+    'MKV': VIDEO,
+    'MP3': MUSIC,       
+    'OGG': MUSIC,
+    'WAV': MUSIC,
+    'AMR': MUSIC,
 }
 
 FOLDERS = []
@@ -42,8 +59,8 @@ def scan(folder: Path):
             MY_OTHER.append(full_name)
         else:
             try:
-                REGISTER_EXTENSION[extension]
-                EXTENSIONS.add(extension)
+                ext_reg = REGISTER_EXTENSION[extension]
+                ext_reg.append(full_name)
             except KeyError:
                 UNKNOWN.add(extension)  # .mp4, .mov, .avi
                 MY_OTHER.append(full_name)
