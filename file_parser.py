@@ -69,12 +69,10 @@ if __name__ == '__main__':
     folder_process = sys.argv[1]
     scan(Path(folder_process))
     
-    # Додано вивід значень 'AVI' і 'VIDEO' окремо
     print(f'Video avi: {VIDEO}')
     print(f'Video mp4: {VIDEO}')
     print(f'Video mov: {VIDEO}')
     
-    # Далі ваш інший вивід
     print(f'Images jpeg: {JPEG_IMAGES}')
     print(f'Images jpg: {JPG_IMAGES}')
     print(f'Images png: {PNG_IMAGES}')
