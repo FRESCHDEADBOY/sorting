@@ -2,37 +2,49 @@ import sys
 from pathlib import Path
 
 JPEG_IMAGES = []
-JPG_IMAGES = []
 PNG_IMAGES = []
+JPG_IMAGES = []
 SVG_IMAGES = []
+AVI_VIDEO = []
+MP4_VIDEO = []
+MOV_VIDEO = []
+MKV_VIDEO = []
+DOC_DOCUMENT = []
+DOCX_DOCUMENT = []
+TXT_DOCUMENT = []
+PDF_DOCUMENT = []
+XLSX_DOCUMENT = []
+PPTX_DOCUMENT = []
 MP3_AUDIO = []
+OGG_AUDIO = []
+WAV_AUDIO = []
+AMR_AUDIO = []
+ZIP_ARCHIVES = []
+GZ_ARCHIVES = []
+TAR_ARCHIVES = []
 MY_OTHER = []
-ARCHIVES = []
-DOCUMENTS = []
-VIDEO = []
-MUSIC = []
 
 REGISTER_EXTENSION = {
-    'JPEG': JPEG_IMAGES,
+   'JPEG': JPEG_IMAGES,
     'JPG': JPG_IMAGES,
     'PNG': PNG_IMAGES,
     'SVG': SVG_IMAGES,
+    'AVI': AVI_VIDEO,
+    'MP4': MP4_VIDEO,
+    'MOV': MOV_VIDEO,
+    'MKV': MKV_VIDEO,
     'MP3': MP3_AUDIO,
-    'ZIP': ARCHIVES,
-    'DOC': DOCUMENTS,   
-    'DOCX': DOCUMENTS,
-    'TXT': DOCUMENTS,
-    'PDF': DOCUMENTS,
-    'XLSX': DOCUMENTS,
-    'PPTX': DOCUMENTS,
-    'AVI': VIDEO,       
-    'MP4': VIDEO,
-    'MOV': VIDEO,
-    'MKV': VIDEO,
-    'MP3': MUSIC,       
-    'OGG': MUSIC,
-    'WAV': MUSIC,
-    'AMR': MUSIC,
+    'OGG': OGG_AUDIO,
+    'WAV': WAV_AUDIO,
+    'AMR': AMR_AUDIO,
+    'DOCX': DOCX_DOCUMENT,
+    'TXT': TXT_DOCUMENT,
+    'PDF': PDF_DOCUMENT,
+    'XLSX': XLSX_DOCUMENT,
+    'PPTX': PPTX_DOCUMENT,
+    'ZIP': ZIP_ARCHIVES,
+    'GZ': GZ_ARCHIVES,
+    'TAR': TAR_ARCHIVES,
 }
 
 FOLDERS = []
