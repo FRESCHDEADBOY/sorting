@@ -73,23 +73,7 @@ def scan(folder: Path):
             try:
                 ext_reg = REGISTER_EXTENSION[extension]
                 ext_reg.append(full_name)
+                EXTENSIONS.add(extension)
             except KeyError:
                 UNKNOWN.add(extension)  # .mp4, .mov, .avi
                 MY_OTHER.append(full_name)
-
-if __name__ == '__main__':
-    folder_process = sys.argv[1]
-    scan(Path(folder_process))
-    
-    print(f'Video avi: {VIDEO}')
-    print(f'Video mp4: {VIDEO}')
-    print(f'Video mov: {VIDEO}')
-    
-    print(f'Images jpeg: {JPEG_IMAGES}')
-    print(f'Images jpg: {JPG_IMAGES}')
-    print(f'Images png: {PNG_IMAGES}')
-    print(f'AUDIO mp3: {MP3_AUDIO}')
-    print(f'Archives zip: {ARCHIVES}')
-
-    print(f'EXTENSIONS: {EXTENSIONS}')
-    print(f'UNKNOWN: {UNKNOWN}')

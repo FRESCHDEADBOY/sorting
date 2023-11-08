@@ -38,25 +38,25 @@ def main(folder: Path):
         handle_media(file, folder / 'videos' / 'MOV')
     for file in file_parser.MKV_VIDEO:
         handle_media(file, folder / 'videos' / 'MKV')
-    for file in file_parser.DOC_DOCUMENTS:
+    for file in file_parser.DOC_DOCUMENT:
         handle_media(file, folder / 'documents' / 'DOC')
-    for file in file_parser.DOCX_DOCUMENTS:
+    for file in file_parser.DOCX_DOCUMENT:
         handle_media(file, folder / 'documents' / 'DOCX')
-    for file in file_parser.TXT_DOCUMENTS:
+    for file in file_parser.TXT_DOCUMENT:
         handle_media(file, folder / 'documents' / 'TXT')
-    for file in file_parser.PDF_DOCUMENTS:
+    for file in file_parser.PDF_DOCUMENT:
         handle_media(file, folder / 'documents' / 'PDF')
-    for file in file_parser.XLSX_DOCUMENTS:
+    for file in file_parser.XLSX_DOCUMENT:
         handle_media(file, folder / 'documents' / 'XLSX')
-    for file in file_parser.PPTX_DOCUMENTS:
+    for file in file_parser.PPTX_DOCUMENT:
         handle_media(file, folder / 'documents' / 'PPTX')
-    for file in file_parser.MP3_MUSIC:
+    for file in file_parser.MP3_AUDIO:
         handle_media(file, folder / 'music' / 'MP3')
-    for file in file_parser.OGG_MUSIC:
+    for file in file_parser.OGG_AUDIO:
         handle_media(file, folder / 'music' / 'OGG')
-    for file in file_parser.WAV_MUSIC:
+    for file in file_parser.WAV_AUDIO:
         handle_media(file, folder / 'music' / 'WAV')
-    for file in file_parser.AMR_MUSIC:
+    for file in file_parser.AMR_AUDIO:
         handle_media(file, folder / 'music' / 'AMR')
     for file in file_parser.ZIP_ARCHIVES:
         handle_archive(file, folder / 'archives' / 'ZIP')
@@ -66,16 +66,12 @@ def main(folder: Path):
         handle_archive(file, folder / 'archives' / 'TAR')
     for file in file_parser.MY_OTHER:
         handle_media(file, folder / 'MY_OTHER')
-
-
     for folder in file_parser.FOLDERS[::-1]:
+
         # Видаляємо пусті папки після сортування
         try:
             folder.rmdir()
         except OSError:
             print(f'Error during remove folder {folder}')
-
-
-if __name__ == "__main__":
-    folder_process = Path(sys.argv[1])
-    main(folder_process.resolve())
+    for file in file_parser.MY_OTHER:
+        handle_media(file, folder / 'MY_OTHER')
